@@ -16,6 +16,8 @@ titles = []
 
 # Iterate all windows searching for Spotify.exe. If it exists, extract the
 # song name from the window title.
+#
+# Return `False` to stop iterating. Returning `True` is equivalent to "continue".
 def foreach_window(hwnd, lParam):
   if not IsWindowVisible(hwnd):
     return True
@@ -48,7 +50,12 @@ def foreach_window(hwnd, lParam):
     titles.append(text)
     return False
 
+  # It's unlikely we get here, but if for some reason the window text parsing
+  # fails, we can keep iterating through the windows.
   return True
 
+
+# Enumerate all of the windows looking for Spotify.
 EnumWindows(EnumWindowsProc(foreach_window), 0)
+
 print titles[0] if len(titles) == 1 else 'No song playing...'
