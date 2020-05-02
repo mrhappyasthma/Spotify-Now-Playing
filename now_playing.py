@@ -40,7 +40,6 @@ def foreach_window(hwnd, lParam):
   if executable_name != "Spotify.exe":
     return True
 
-
   # Extract the window title bar text, which contains the song name.
   buffer = ctypes.create_unicode_buffer(buffer_length)
   GetWindowText(hwnd, buffer, buffer_length)
