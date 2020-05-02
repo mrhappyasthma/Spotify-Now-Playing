@@ -46,7 +46,7 @@ def foreach_window(hwnd, lParam):
   buffer = ctypes.create_unicode_buffer(buffer_length)
   GetWindowText(hwnd, buffer, buffer_length)
   text = buffer.value
-  if len(text) > 0 and text != "Spotify Premium":
+  if len(text) > 0 and text != "Spotify Premium" and text != "Spotify Free":
     titles.append(text)
     return False
 
