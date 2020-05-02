@@ -1,4 +1,4 @@
-# Spotify-Now-Playing
+# Spotify: Now Playing
 
 This repository contains a simple python script to grab the current song playing on Spotify.exe on Windows.
 
