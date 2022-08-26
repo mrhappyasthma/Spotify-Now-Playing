@@ -58,4 +58,4 @@ def foreach_window(hwnd, lParam):
 # Enumerate all of the windows looking for Spotify.
 EnumWindows(EnumWindowsProc(foreach_window), 0)
 
-print (titles[0] if len(titles) == 1 else 'No song playing...')
+print(titles[0] if len(titles) == 1 else 'No song playing...')
